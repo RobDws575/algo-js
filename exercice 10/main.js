@@ -28,5 +28,20 @@ let Mewtow = new Pokemon('Mewtow', 10, 10, 30, 75)
 let percent = 75 
 let isLucky = Math.floor(Math.random() * 100)  <= percent;
 
-Tripotanus.attackPokemon(Mewtow);
 
+while (Tripotanus.hp > 0 && Mewtow.hp > 0) {
+    Tripotanus.attackPokemon(Mewtow);
+
+if (Mewtow.hp <= 0) {
+    console.log("Mewtow a perdu le combat, il est K.O !");
+    break;
+    }
+
+Mewtow.attackPokemon(Tripotanus);
+if (Tripotanus.hp <= 0) {
+    console.log("Tripotanus a perdu le combat, il est K.O !");
+    break;
+    }
+}
+
+console.log("Le combat est terminé");
